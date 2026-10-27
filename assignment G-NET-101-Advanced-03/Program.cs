@@ -198,7 +198,17 @@
         //}
         #endregion
         #region session 3 q6:4
-            Console.WriteLine("Current page after back: " + history.Peek());
+        //Console.WriteLine("Current page after back: " + history.Peek());
+        #endregion
+        #region session 3 q6 :5
+            while (history.Count > 0)
+{
+    history.Pop();
+}
+
+bool success = history.TryPop(out string page);
+
+Console.WriteLine("TryPop successful: " + success);
         #endregion
 }
 
