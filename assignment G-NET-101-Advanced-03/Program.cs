@@ -157,8 +157,12 @@
         //Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
         #endregion
         #region session3 q1:4
-int firstAbove90 = grades.FirstOrDefault(g => g > 90);
-        Console.WriteLine("First Grade Above 90: " + firstAbove90);
+        //int firstAbove90 = grades.FirstOrDefault(g => g > 90);
+        //        Console.WriteLine("First Grade Above 90: " + firstAbove90);
+        #endregion
+        #region session3 q1:5
+List<int> failingGrades = grades.Where(g => g < 75).ToList();
+        Console.WriteLine("Failing Grades: " + string.Join(", ", failingGrades));
 #endregion
     }
 
