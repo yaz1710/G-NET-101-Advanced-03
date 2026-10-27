@@ -180,13 +180,16 @@
         //        gradeStrings.ForEach(g => Console.WriteLine(g));
         #endregion
         #region session 3 q6 :1
-            Stack<string> history = new Stack<string>();
+        //            Stack<string> history = new Stack<string>();
 
-        history.Push("google.com");
-history.Push("github.com");
-history.Push("stackoverflow.com");
-history.Push("youtube.com");
-history.Push("claude.ai");]
+        //        history.Push("google.com");
+        //history.Push("github.com");
+        //history.Push("stackoverflow.com");
+        //history.Push("youtube.com");
+        //history.Push("claude.ai");]
+        #endregion
+        #region session 3 q6:2
+            Console.WriteLine("Current page: " + history.Peek());
         #endregion
     }
 
