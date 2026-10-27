@@ -165,8 +165,12 @@
         //        Console.WriteLine("Failing Grades: " + string.Join(", ", failingGrades));
         #endregion
         #region session 3 q1 :6 
-grades.RemoveAll(g => g< 75);
-Console.WriteLine("Grades After Removing Failures: " + string.Join(", ", grades));
+        //grades.RemoveAll(g => g< 75);
+        //Console.WriteLine("Grades After Removing Failures: " + string.Join(", ", grades));
+        #endregion
+        #region session3 q1:7
+bool has100 = grades.Any(g => g == 100);
+        Console.WriteLine("Has Grade 100: " + has100);
 #endregion
     }
 
