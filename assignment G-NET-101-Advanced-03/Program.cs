@@ -5,80 +5,142 @@
     {
         static void main(String[] args)
 
-            #region q1 session3
-            class Product
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Category { get; set; }
-            public double Price { get; set; }
-            public int Stock { get; set; }
-        }
+            #region q1 session2
+        //            class Product
+        //        {
+        //            public int Id { get; set; }
+        //            public string Name { get; set; }
+        //            public string Category { get; set; }
+        //            public double Price { get; set; }
+        //            public int Stock { get; set; }
+        //        }
 
-        class Program
-        {
-            static List<Product> catalog = new List<Product>
-{
-    new Product { Id = 1, Name = "laptop", Category = "electronics", Price = 1200, Stock = 10 },
-    new Product { Id = 2, Name = "phone", Category = "electronics", Price = 800, Stock = 25 },
-    new Product { Id = 3, Name = "t--shirt", Category = "clothing", Price = 30, Stock = 100 },
-    new Product { Id = 4, Name = "jeans", Category = "clothing", Price = 60, Stock = 50 },
-    new Product { Id = 5, Name = "chocolate", Category = "food", Price = 5, Stock = 200 },
-    new Product { Id = 6, Name = "coffee Beans", Category = "food   ", Price = 15, Stock = 80 },
-    new Product { Id = 7, Name = "C# Book", Category = "books", Price = 45, Stock = 30 },
-    new Product { Id = 8, Name = "novel", Category = "books", Price = 20, Stock = 60 },
-    new Product { Id = 9, Name = "  headphones", Category = "electronics", Price = 150, Stock = 40 },
-    new Product { Id = 10, Name = "jacket", Category = "clothing", Price = 90, Stock = 15 }
+        //        class Program
+        //        {
+        //            static List<Product> catalog = new List<Product>
+        //{
+        //    new Product { Id = 1, Name = "laptop", Category = "electronics", Price = 1200, Stock = 10 },
+        //    new Product { Id = 2, Name = "phone", Category = "electronics", Price = 800, Stock = 25 },
+        //    new Product { Id = 3, Name = "t--shirt", Category = "clothing", Price = 30, Stock = 100 },
+        //    new Product { Id = 4, Name = "jeans", Category = "clothing", Price = 60, Stock = 50 },
+        //    new Product { Id = 5, Name = "chocolate", Category = "food", Price = 5, Stock = 200 },
+        //    new Product { Id = 6, Name = "coffee Beans", Category = "food   ", Price = 15, Stock = 80 },
+        //    new Product { Id = 7, Name = "C# Book", Category = "books", Price = 45, Stock = 30 },
+        //    new Product { Id = 8, Name = "novel", Category = "books", Price = 20, Stock = 60 },
+        //    new Product { Id = 9, Name = "  headphones", Category = "electronics", Price = 150, Stock = 40 },
+        //    new Product { Id = 10, Name = "jacket", Category = "clothing", Price = 90, Stock = 15 }
+        //    };
+
+
+        //            static List<T> TransformProducts<T>(
+        //                List<Product> products,
+        //                Func<Product, T> function)
+        //            {
+        //                List<T> result = new List<T>();
+
+        //                foreach (Product p in products)
+        //                {
+        //                    result.Add(function(p));
+        //                }
+
+        //                return result;
+        //            }
+
+        //            static void Main(string[] args)
+        //            {
+
+        //                Console.WriteLine("--- Summary List ---");
+
+        //                List<string> summary = TransformProducts(
+        //                    catalog,
+        //                    p => $"{p.Name} (${p.Price})"
+        //                );
+
+        //                foreach (string item in summary)
+        //                {
+        //                    Console.WriteLine(item);
+        //                }
+
+        //                Console.WriteLine();
+
+
+        //                Console.WriteLine("--- Price Labels ---");
+
+        //                List<string> labels = TransformProducts(
+        //                    catalog,
+        //                    p => $"{p.Name}: {(p.Price > 100 ? "Expensive!" : "Affordable")}"
+        //                );
+
+        //                foreach (string item in labels)
+        //                {
+        //                    Console.WriteLine(item);
+        //                }
+        //            }
+        //        }
+        #endregion
+        #region q2 session 2
+class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public double Price { get; set; }
+        public int Stock { get; set; }
+    }
+
+    class Program
+    {
+        static List<Product> catalog = new List<Product>
+    {
+        new Product { Id = 1, Name = "Laptop", Category = "Electronics", Price = 1200, Stock = 10 },
+        new Product { Id = 2, Name = "Phone", Category = "Electronics", Price = 800, Stock = 25 },
+        new Product { Id = 3, Name = "T-Shirt", Category = "Clothing", Price = 30, Stock = 100 },
+        new Product { Id = 4, Name = "Jeans", Category = "Clothing", Price = 60, Stock = 50 },
+        new Product { Id = 5, Name = "Chocolate", Category = "Food", Price = 5, Stock = 200 },
+        new Product { Id = 6, Name = "Coffee Beans", Category = "Food", Price = 15, Stock = 80 },
+        new Product { Id = 7, Name = "C# Book", Category = "Books", Price = 45, Stock = 30 },
+        new Product { Id = 8, Name = "Novel", Category = "Books", Price = 20, Stock = 60 },
+        new Product { Id = 9, Name = "Headphones", Category = "Electronics", Price = 150, Stock = 40 },
+        new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 90, Stock = 15 }
     };
 
+        
+        static List<Product> FilterProducts(
+            List<Product> products,
+            Predicate<Product> condition)
+        {
+            List<Product> result = new List<Product>();
 
-            static List<T> TransformProducts<T>(
-                List<Product> products,
-                Func<Product, T> function)
+            foreach (Product p in products)
             {
-                List<T> result = new List<T>();
-
-                foreach (Product p in products)
+                if (condition(p))
                 {
-                    result.Add(function(p));
+                    result.Add(p);
                 }
-
-                return result;
             }
 
-            static void Main(string[] args)
+            return result;
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("--- Low-Stock Alert ---");
+
+            List<Product> lowStock = FilterProducts(
+                catalog,
+                p => p.Stock < 20
+            );
+
+            foreach (Product p in lowStock)
             {
-
-                Console.WriteLine("--- Summary List ---");
-
-                List<string> summary = TransformProducts(
-                    catalog,
-                    p => $"{p.Name} (${p.Price})"
+                Console.WriteLine(
+                    $"[LOW STOCK] {p.Name}: only {p.Stock} left!"
                 );
-
-                foreach (string item in summary)
-                {
-                    Console.WriteLine(item);
-                }
-
-                Console.WriteLine();
-
-
-                Console.WriteLine("--- Price Labels ---");
-
-                List<string> labels = TransformProducts(
-                    catalog,
-                    p => $"{p.Name}: {(p.Price > 100 ? "Expensive!" : "Affordable")}"
-                );
-
-                foreach (string item in labels)
-                {
-                    Console.WriteLine(item);
-                }
             }
         }
+    }
+4
         #endregion
-
 
     }
 
