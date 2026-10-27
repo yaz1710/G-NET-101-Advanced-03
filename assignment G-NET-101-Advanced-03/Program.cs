@@ -141,13 +141,18 @@
         //    }
         #endregion
         #region session 3 q1 :1
-List<int> grades = new List<int>()
-{
-    85, 92, 78, 95, 88, 70, 100, 65
-};
+        //List<int> grades = new List<int>()
+        //{
+        //    85, 92, 78, 95, 88, 70, 100, 65
+        //};
         #endregion
 
-
+        #region session 3 q1:2 
+Console.WriteLine("Original Grades: " + string.Join(", ", grades));
+Console.WriteLine("Count: " + grades.Count);
+Console.WriteLine("First Grade: " + grades.First());
+Console.WriteLine("Last Grade: " + grades.Last());
+#endregion
     }
 
 
