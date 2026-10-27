@@ -189,9 +189,15 @@
         //history.Push("claude.ai");]
         #endregion
         #region session 3 q6:2
-            Console.WriteLine("Current page: " + history.Peek());
+        //Console.WriteLine("Current page: " + history.Peek());
         #endregion
-    }
+        #region session 3 q6 :3
+            for (int i = 0; i< 3; i++)
+{
+    Console.WriteLine("Leaving: " + history.Pop());
+}
+    #endregion
+}
 
 
 }
