@@ -5,7 +5,7 @@
     {
         static void main(String[] args)
 
-            #region q1 session2
+         #region q1 session2
         //            class Product
         //        {
         //            public int Id { get; set; }
@@ -169,16 +169,25 @@
         //Console.WriteLine("Grades After Removing Failures: " + string.Join(", ", grades));
         #endregion
         #region session3 q1:7
-bool has100 = grades.Any(g => g == 100);
-        Console.WriteLine("Has Grade 100: " + has100);
-#endregion
-            #region session3 q1 :8
-List<string> gradeStrings = grades
-    .Select(g => $"Grade: {g}")
-    .ToList();
+        //bool has100 = grades.Any(g => g == 100);
+        //        Console.WriteLine("Has Grade 100: " + has100);
+        #endregion
+        #region session3 q1 :8
+        //List<string> gradeStrings = grades
+        //    .Select(g => $"Grade: {g}")
+        //    .ToList();
 
-        gradeStrings.ForEach(g => Console.WriteLine(g));
-#endregion
+        //        gradeStrings.ForEach(g => Console.WriteLine(g));
+        #endregion
+        #region session 3 q6 :1
+            Stack<string> history = new Stack<string>();
+
+        history.Push("google.com");
+history.Push("github.com");
+history.Push("stackoverflow.com");
+history.Push("youtube.com");
+history.Push("claude.ai");]
+        #endregion
     }
 
 
