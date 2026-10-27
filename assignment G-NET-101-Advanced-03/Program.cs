@@ -146,7 +146,6 @@
         //    85, 92, 78, 95, 88, 70, 100, 65
         //};
         #endregion
-
         #region session 3 q1:2 
         //Console.WriteLine("Original Grades: " + string.Join(", ", grades));
         //Console.WriteLine("Count: " + grades.Count);
@@ -154,8 +153,12 @@
         //Console.WriteLine("Last Grade: " + grades.Last());
         #endregion
         #region session 3 q1:3
-grades.Sort();
-Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
+        //grades.Sort();
+        //Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
+        #endregion
+        #region session3 q1:4
+int firstAbove90 = grades.FirstOrDefault(g => g > 90);
+        Console.WriteLine("First Grade Above 90: " + firstAbove90);
 #endregion
     }
 
