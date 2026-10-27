@@ -172,6 +172,13 @@
 bool has100 = grades.Any(g => g == 100);
         Console.WriteLine("Has Grade 100: " + has100);
 #endregion
+            #region session3 q1 :8
+List<string> gradeStrings = grades
+    .Select(g => $"Grade: {g}")
+    .ToList();
+
+        gradeStrings.ForEach(g => Console.WriteLine(g));
+#endregion
     }
 
 
