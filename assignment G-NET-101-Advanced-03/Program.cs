@@ -192,11 +192,14 @@
         //Console.WriteLine("Current page: " + history.Peek());
         #endregion
         #region session 3 q6 :3
-            for (int i = 0; i< 3; i++)
-{
-    Console.WriteLine("Leaving: " + history.Pop());
-}
-    #endregion
+        //            for (int i = 0; i< 3; i++)
+        //{
+        //    Console.WriteLine("Leaving: " + history.Pop());
+        //}
+        #endregion
+        #region session 3 q6:4
+            Console.WriteLine("Current page after back: " + history.Peek());
+        #endregion
 }
 
 
