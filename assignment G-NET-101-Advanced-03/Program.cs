@@ -148,10 +148,14 @@
         #endregion
 
         #region session 3 q1:2 
-Console.WriteLine("Original Grades: " + string.Join(", ", grades));
-Console.WriteLine("Count: " + grades.Count);
-Console.WriteLine("First Grade: " + grades.First());
-Console.WriteLine("Last Grade: " + grades.Last());
+        //Console.WriteLine("Original Grades: " + string.Join(", ", grades));
+        //Console.WriteLine("Count: " + grades.Count);
+        //Console.WriteLine("First Grade: " + grades.First());
+        //Console.WriteLine("Last Grade: " + grades.Last());
+        #endregion
+        #region session 3 q1:3
+grades.Sort();
+Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
 #endregion
     }
 
