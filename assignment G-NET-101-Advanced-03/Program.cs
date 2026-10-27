@@ -161,8 +161,12 @@
         //        Console.WriteLine("First Grade Above 90: " + firstAbove90);
         #endregion
         #region session3 q1:5
-List<int> failingGrades = grades.Where(g => g < 75).ToList();
-        Console.WriteLine("Failing Grades: " + string.Join(", ", failingGrades));
+        //List<int> failingGrades = grades.Where(g => g < 75).ToList();
+        //        Console.WriteLine("Failing Grades: " + string.Join(", ", failingGrades));
+        #endregion
+        #region session 3 q1 :6 
+grades.RemoveAll(g => g< 75);
+Console.WriteLine("Grades After Removing Failures: " + string.Join(", ", grades));
 #endregion
     }
 
